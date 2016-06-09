@@ -7,7 +7,7 @@ Modifies the aws status page such that it *actually* shows the status of service
 # usage
 
 - Download the latest release from the [releases page](https://github.com/josegonzalez/real-aws-status/releases)
-- Drag the release to your Chrome browser and install
+- Drag the release to your Chrome browser on the `chrome://extensions/` page and install
 - Enjoy
 
 # how does it work?
