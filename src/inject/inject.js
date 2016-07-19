@@ -7,7 +7,13 @@ chrome.extension.sendMessage({}, function(response) {
       [].forEach.call(trs, function(el) {
         var image = el.getElementsByTagName('img')[0];
         if (image.src.indexOf('status0.gif') > -1) {
-          el.parentNode.removeChild(el);
+          var text = el.innerText || el.textContent;
+          if (text.toLowerCase().indexOf('service is operating normally') > -1) {
+            el.style.display = 'none';
+            return;
+          }
+
+          image.src = '/images/status1.gif';
           return;
         }
 
