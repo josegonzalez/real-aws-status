@@ -22,6 +22,8 @@ Modifies the aws status page such that it *actually* shows the status of service
 - Grabs all the rows in the status table
 - Deletes the rows if the status image is "a-okay"
 - Increments the status image in all other cases (except when AWS already says a service is down)
+- Updates the legend to show a joke legend
+- Shows all "resolved" issues as infobox
 
 # todo
 
