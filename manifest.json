@@ -17,12 +17,14 @@
     "persistent": false
   },
   "permissions": [
-    "http://status.aws.amazon.com/*"
+    "http://status.aws.amazon.com/*",
+    "https://status.aws.amazon.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "http://status.aws.amazon.com/*"
+        "http://status.aws.amazon.com/*",
+        "https://status.aws.amazon.com/*"
       ],
       "js": [
         "src/inject/inject.js"
