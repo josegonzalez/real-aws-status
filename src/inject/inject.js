@@ -61,7 +61,7 @@ chrome.extension.sendMessage({}, function(response) {
       var tds = document.querySelectorAll('body > div > div .pad8.bordered:not(.gradient):not(.whitebg) td')
       var iteration = 0;
       var messages = {
-        1: 'Service is operating normally',
+        1: 'Service is (probaby)<br />operating normally',
         2: 'Everything is fucked',
         3: 'We finally concede<br />everything is fucked',
         4: 'Nuclear armageddon<br />wiped out all life on Earth',
