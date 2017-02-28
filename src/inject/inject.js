@@ -57,32 +57,35 @@ chrome.extension.sendMessage({}, function(response) {
 
           table.innerHTML = table.innerHTML + extra;
         }
-
-        var tds = document.querySelectorAll('body > div > div .pad8.bordered:not(.gradient):not(.whitebg) td');
-        var iteration = 0;
-        var messages = {
-          0: 'Service is operating normally',
-          1: 'Everything is fucked',
-          2: 'We finally concede<br />everything is fucked',
-          3: 'Nuclear armageddon<br />wiped out all life on Earth',
-        };
-        for (let tr of tds) {
-          var image = tr.getElementsByTagName('img');
-          if (image.length > 0) {
-            if (iteration == 1) {
-              image[0].src ='/images/status1.gif';
-            }
-            if (iteration == 2) {
-              image[0].src ='/images/status2.gif';
-            }
-            if (iteration == 3) {
-              image[0].src ='/images/status3.gif';
-            }
-            return;
+      }
+      var tds = document.querySelectorAll('body > div > div .pad8.bordered:not(.gradient):not(.whitebg) td')
+      var iteration = 0;
+      var messages = {
+        1: 'Service is operating normally',
+        2: 'Everything is fucked',
+        3: 'We finally concede<br />everything is fucked',
+        4: 'Nuclear armageddon<br />wiped out all life on Earth',
+      };
+      var i = 0;
+      for (let tr of tds) {
+        var image = tr.getElementsByTagName('img');
+        i++
+        if (image.length > 0) {
+          if (iteration == 1) {
+            image[0].src ='/images/status1.gif';
           }
-          tr.innerHTML = messages[iteration];
+          if (iteration == 2) {
+            image[0].src ='/images/status2.gif';
+          }
+          if (iteration == 3) {
+            image[0].src ='/images/status3.gif';
+          }
           iteration++;
-        };
+          continue;
+        }
+        if (i % 2 == 0) {
+          tr.innerHTML = messages[iteration];
+        }
       }
     }
   }, 10);
