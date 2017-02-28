@@ -27,12 +27,15 @@ chrome.extension.sendMessage({}, function(response) {
             var textEl = tr.querySelectorAll('td:nth-of-type(3)')[0],
                 text = textEl.innerText || textEl.textContent;
             if (text.toLowerCase().indexOf('service is operating normally') == 0) {
+              tr.parentNode.removeChild(tr);
               continue;
             }
           }
 
           tr.style.display = 'table-row';
-          if (image.src.indexOf('/images/status1.gif') > -1) {
+          if (image.src.indexOf('/images/status0.gif') > -1) {
+            tr.parentNode.removeChild(tr);
+          } else if (image.src.indexOf('/images/status1.gif') > -1) {
             image.src = '/images/status2.gif';
           } else if (image.src.indexOf('/images/status2.gif') > -1) {
             image.src = '/images/status3.gif';
